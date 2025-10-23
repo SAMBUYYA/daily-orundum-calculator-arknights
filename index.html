@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Orundum/Originite Prime Calculator Arknight</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="js/schedule.js"></script>
+    <script src="js/schedule_input.js" defer></script>
+
+    <script src="js/save.js" defer></script>
+    <script src="js/result.js" defer></script>
+</head>
+<body>
+    <div>
+        <h3>Saat Ini Dimiliki:</h3>
+
+        <input oninput="tampilkan(); simpan_dimiliki('save');" value="0" type="number" id="current_orundum" placeholder="Orundum Saat Ini" />
+        <input oninput="tampilkan(); simpan_dimiliki('save');" value="0" type="number" id="current_originite_prime" placeholder="Originite Prime Saat Ini" />
+        <input oninput="tampilkan(); simpan_dimiliki('save');" value="0" type="number" id="current_headhunting_permit" placeholder="Headhunting Permit Saat Ini" />
+        <input oninput="tampilkan(); simpan_dimiliki('save');" value="0" type="number" id="current_ten_roll_headhunting_permit" placeholder="Ten-roll Headhunting Permit Saat Ini" />
+
+        <input onchange="tampilkan(); simpan_dimiliki('save');" type="date" id="current_target_day" placeholder="Target Day" />
+    </div>
+
+    <div id="bisa_didapatkan"></div>
+    <div id="hasil_pendapatan"></div>
+    <div id="jumlah_pendapatan"></div>
+</body>
+</html>
