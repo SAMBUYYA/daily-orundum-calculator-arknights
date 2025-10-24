@@ -1,8 +1,5 @@
 let bisa_didapatkan = document.getElementById("bisa_didapatkan");
 
-
-bisa_didapatkan.innerHTML += "<h3>Bisa Didapatkan:</h3>";
-
 function aktifkan(){
     schedule.forEach(schedule => {
 

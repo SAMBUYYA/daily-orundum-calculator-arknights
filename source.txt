@@ -1,11 +1,11 @@
-- Orundum Png
+- orundum.webp
 https://arknights.fandom.com/wiki/Orundum?file=Orundum.png
 
-- Originte Prime Png
+- originte_prime.webp
 https://arknights.fandom.com/wiki/Orundum?file=Originite_Prime.png
 
-- Headhunting Permit Png
+- headhunting_permit.webp
 https://arknights.fandom.com/wiki/Headhunting_Permit?file=Headhunting_Permit.png
 
-- Ten-roll Headhunting Permit Png
+- ten_roll_headhunting_permit.webp
 https://arknights.fandom.com/wiki/Ten-roll_Headhunting_Permit?file=Ten-roll_Headhunting_Permit.png

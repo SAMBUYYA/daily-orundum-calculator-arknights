@@ -3,29 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Orundum/Originite Prime Calculator Arknight</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Daily Orundum Calculator Arknight</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/header.css">
+
 
     <script src="js/schedule.js"></script>
     <script src="js/schedule_input.js" defer></script>
+
 
     <script src="js/save.js" defer></script>
     <script src="js/result.js" defer></script>
 </head>
 <body>
-    <div>
-        <h3>Saat Ini Dimiliki:</h3>
+    <header class="header">
+        <h1>Daily Orundum Calculator For Arknight</h1>
+    </header>
+    <h3>Saat Ini Dimiliki:</h3>
+    <div style="text-align: center;">  
+        <div style="display: inline-flex; justify-content: center; margin: 5px;">
+            <img src="picture/orundum.webp" height="50px" width="50px">
+            <input oninput="simpan_dimiliki('save'); tampilkan();" value="0" type="number" id="current_orundum" placeholder="Orundum Saat Ini" />
+        </div>
+        
+        <div style="display: inline-flex; justify-content: center; margin: 5px;">
+            <img src="picture/originite_prime.webp" height="50px" width="50px">
+            <input oninput="simpan_dimiliki('save'); tampilkan();" value="0" type="number" id="current_originite_prime" placeholder="Originite Prime Saat Ini" />
+        </div>
 
-        <input oninput="tampilkan(); simpan_dimiliki('save');" value="0" type="number" id="current_orundum" placeholder="Orundum Saat Ini" />
-        <input oninput="tampilkan(); simpan_dimiliki('save');" value="0" type="number" id="current_originite_prime" placeholder="Originite Prime Saat Ini" />
-        <input oninput="tampilkan(); simpan_dimiliki('save');" value="0" type="number" id="current_headhunting_permit" placeholder="Headhunting Permit Saat Ini" />
-        <input oninput="tampilkan(); simpan_dimiliki('save');" value="0" type="number" id="current_ten_roll_headhunting_permit" placeholder="Ten-roll Headhunting Permit Saat Ini" />
+        <div style="display: inline-flex; justify-content: center; margin: 5px;">
+            <img src="picture/headhunting_permit.webp" height="50px" width="50px">
+           <input oninput="simpan_dimiliki('save'); tampilkan();" value="0" type="number" id="current_headhunting_permit" placeholder="Headhunting Permit Saat Ini" />
+        </div>
 
-        <input onchange="tampilkan(); simpan_dimiliki('save');" type="date" id="current_target_day" placeholder="Target Day" />
+        <div style="display: inline-flex; justify-content: center; margin: 5px;">
+            <img src="picture/ten_roll_headhunting_permit.webp" height="50px" width="50px">
+           <input oninput="simpan_dimiliki('save'); tampilkan();" value="0" type="number" id="current_ten_roll_headhunting_permit" placeholder="Ten-roll Headhunting Permit Saat Ini" />
+        </div>
+          
+        <div style="text-align: center; margin-top: 15px;">
+            <label for="current_target_day">Target</label><br>
+            <input onchange="simpan_dimiliki('save'); tampilkan();" type="date" id="current_target_day" placeholder="Target Day" />
+        </div>
+        
     </div>
 
+    <h3>Bisa Didapatkan:</h3>
     <div id="bisa_didapatkan"></div>
+
+    <h3>Hasil Pendapatan:</h3>
     <div id="hasil_pendapatan"></div>
+
     <div id="jumlah_pendapatan"></div>
 </body>
 </html>

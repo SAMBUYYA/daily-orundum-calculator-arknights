@@ -28,9 +28,7 @@ function hitung(penentuan){
     let hasil   = "";
     let jumlah  = "";
 
-    hasil = "<h3>Hasil Pendapatan:</h3>";
-
-    let waktu_batas = 370;           // jumlah hari ke depan
+    let waktu_batas = 360;          // jumlah hari ke depan
     let waktu_mulai = new Date();   // tanggal hari ini
 
     // Nama hari dan bulan
@@ -131,7 +129,7 @@ function hitung(penentuan){
 
     function list(name, total){
         return "<div class='get_list list'>" +
-                "<img class='get_list_picture' alt='" + name + "' src='" + name + ".webp'>" +
+                "<img class='get_list_picture' alt='" + name + "' src='picture/" + name + ".webp'>" +
                 "<span class='get_list_total' style=''>" + total + "</span>" +
                 "</div>";
     }
