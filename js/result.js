@@ -28,14 +28,14 @@ function hitung(penentuan){
     let hasil   = "";
     let jumlah  = "";
 
-    let waktu_batas = 30;          // jumlah hari ke depan
     let waktu_mulai = new Date();   // tanggal hari ini
 
     // Nama hari dan bulan
     const namaHari  = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
     const namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-
-    for (let a = 1; a <= waktu_batas; a++) {
+    
+    let a = 1;
+    while(true) {
 
         let waktu = new Date(waktu_mulai);
         waktu.setDate(waktu_mulai.getDate() + a);
@@ -122,6 +122,10 @@ function hitung(penentuan){
             }
         }
         // ChatGPT Help
+
+        a++;
+        if (a > 365) break;
+
         
     }
 
