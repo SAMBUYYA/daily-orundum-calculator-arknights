@@ -28,7 +28,7 @@ function hitung(penentuan){
     let hasil   = "";
     let jumlah  = "";
 
-    let waktu_batas = 360;          // jumlah hari ke depan
+    let waktu_batas = 30;          // jumlah hari ke depan
     let waktu_mulai = new Date();   // tanggal hari ini
 
     // Nama hari dan bulan
@@ -106,7 +106,7 @@ function hitung(penentuan){
         hasil += "</div>";
 
         // ChatGPT Help
-        let targetStr = localStorage.getItem("current_target_day");
+        let targetStr = document.getElementById("current_target_day").value;
         if (targetStr) {
             let target = new Date(targetStr);
 
