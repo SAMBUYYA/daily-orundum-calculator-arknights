@@ -35,6 +35,9 @@ function hitung(penentuan){
     const namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
     
     let a = 1;
+
+    let daily_remaining = {};
+
     while(true) {
 
         let waktu = new Date(waktu_mulai);
@@ -80,6 +83,26 @@ function hitung(penentuan){
                         add(schedule.item, schedule.amount);
                     }
 
+                }
+
+                if(schedule.type == "daily-remaining"){
+
+                    let checked = document.getElementById(schedule.id).checked;
+                    let checked_value = parseInt(document.getElementById("input_" + schedule.id).value) || 0;
+                    
+                    if(checked){
+                        if(a == 1){
+                            daily_remaining[schedule.id] = parseInt(checked_value);
+                        }else{
+                            daily_remaining[schedule.id]--;
+                        }
+
+                        if(daily_remaining[schedule.id] > 0){
+                            hasil   += list(schedule.item, schedule.amount);
+                            add(schedule.item, schedule.amount);
+                        }
+                    }
+                    
                 }
 
                 if(schedule.type == "weekly" && hari == 1){
