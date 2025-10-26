@@ -184,7 +184,7 @@ function hitung(penentuan){
             }
         });
 
-        jumlah += "<span class='total_pull'>" + total_pull + " Pull</span>";
+        jumlah += "<span class='total_pull'>" + total_pull.toFixed(2) + " Pull</span>";
 
         dataItem.forEach(item => {
             jumlah += list(item.name, item.value);
