@@ -53,6 +53,18 @@
     padding: 2px 5px;
 }
 
+.total_pull{
+    position: absolute;
+    top: -20px;
+    right: 0;
+
+    background-color: black;
+    color: white;
+
+    padding: 5px;
+
+    border-radius: 10px;
+}
 /* LIST  */
 
 

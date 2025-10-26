@@ -59,6 +59,47 @@ function simpan_dimiliki(mode = "load") {
 
     });
 }
+
+function simpan_schedule(mode = "load") {
+
+    schedule.forEach(schedule => {
+        const checkbox = document.getElementById(schedule.id);
+        if (!checkbox) return;
+
+        const input = document.getElementById("input_" + schedule.id);
+
+        if (mode === "save") {
+            // simpan status checkbox
+            localStorage.setItem(schedule.id + "_checked", checkbox.checked ? "1" : "0");
+
+            // simpan input jika ada
+            if (input) {
+                let value = parseInt(input.value) || 0;
+                localStorage.setItem(schedule.id + "_value", value);
+            }
+
+        } else if (mode === "load") {
+            // load checkbox
+            let savedCheck = localStorage.getItem(schedule.id + "_checked");
+            if (savedCheck !== null) {
+                checkbox.checked = savedCheck === "1";
+                schedule.active = checkbox.checked;
+            }
+
+            // load input jika ada
+            if (input) {
+                let savedValue = localStorage.getItem(schedule.id + "_value");
+                input.value = savedValue !== null ? savedValue : 0;
+            }
+        }
+    });
+
+}
+
 // ChatGPT Help
 
+aktifkan();
 simpan_dimiliki();
+simpan_schedule();
+
+tampilkan();

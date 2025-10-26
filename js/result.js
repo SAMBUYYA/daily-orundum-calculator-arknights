@@ -168,8 +168,26 @@ function hitung(penentuan){
 
     }else if(penentuan == "jumlah"){
 
+        let total_pull = 0;
         dataItem.forEach(item => {
-            jumlah += list(item.name, item.value)
+            if(item.name == "orundum"){
+                total_pull += (item.value / 600);
+            }
+            if(item.name == "originite_prime"){
+                total_pull += ((item.value * 180) / 600);
+            }
+            if(item.name == "headhunting_permit"){
+                total_pull += (item.value);
+            }
+            if(item.name == "ten_roll_headhunting_permit"){
+                total_pull += (item.value * 10);
+            }
+        });
+
+        jumlah += "<span class='total_pull'>" + total_pull + " Pull</span>";
+
+        dataItem.forEach(item => {
+            jumlah += list(item.name, item.value);
         });
 
         return jumlah;
@@ -185,6 +203,3 @@ function tampilkan(){
     document.getElementById("jumlah_pendapatan").innerHTML  = hitung("jumlah");
 
 }
-
-aktifkan();
-tampilkan();
