@@ -11,7 +11,26 @@ function aktifkan(){
     
 }
 
-schedule.forEach(schedule => {
+// CHATGPT HELP
+// Buat array baru (tidak mengubah array asli)
+const sortedSchedule = [...schedule].sort((a, b) => {
+    const kategoriA = a.kategori || "";
+    const kategoriB = b.kategori || "";
+    return kategoriA.localeCompare(kategoriB);
+});
+
+// Lalu pakai sortedSchedule untuk render
+// CHATGPT HELP
+
+let kategori_pemisah = "";
+sortedSchedule.forEach(schedule => {
+
+    if(kategori_pemisah != schedule.category){
+
+        bisa_didapatkan.innerHTML += "<h3 style='text-transform: capitalize; margin: 10px;'>" + schedule.category.replaceAll("-", " ") + "</h3>";
+        kategori_pemisah = schedule.category;
+
+    }
 
     if(schedule.type == "daily"){
 
@@ -65,6 +84,25 @@ schedule.forEach(schedule => {
         bisa_didapatkan.innerHTML   += "<div class='checkbox'>"
                                     + "<input onchange='tampilkan(); simpan_schedule(\"save\")' type='checkbox' id='" + schedule.id + "'>"
                                     + "<label for='" + schedule.id + "'>" + schedule.name + "</label>"
+                                    + "</div>";
+
+    }
+
+    if(schedule.type == "once"){
+
+        bisa_didapatkan.innerHTML   += "<div class='checkbox'>"
+                                    + "<input onchange='tampilkan(); simpan_schedule(\"save\")' type='checkbox' id='" + schedule.id + "'>"
+                                    + "<label for='" + schedule.id + "'>" + schedule.name + "</label>"
+                                    + "</div>";
+
+    }
+
+    if(schedule.type == "once-remaining"){
+
+        bisa_didapatkan.innerHTML   += "<div class='checkbox'>"
+                                    + "<input onchange='tampilkan(); simpan_schedule(\"save\")' type='checkbox' id='" + schedule.id + "'>"
+                                    + "<label for='" + schedule.id + "'>" + schedule.name
+                                    + "<input class='input1' oninput='tampilkan(); simpan_schedule(\"save\")' placeholder='Sisa Harian' type=number' id='input_" + schedule.id + "'>" + "</label>"
                                     + "</div>";
 
     }

@@ -37,6 +37,7 @@ function hitung(penentuan){
     let a = 1;
 
     let daily_remaining = {};
+    let once_time = {};
 
     while(true) {
 
@@ -121,6 +122,38 @@ function hitung(penentuan){
                     if(checked){
                         hasil   += list(schedule.item, schedule.amount);
                         add(schedule.item, schedule.amount);
+                    }
+
+                }
+
+                if(schedule.type == "once"){
+
+                    let checked = document.getElementById(schedule.id).checked;
+                    if(checked){
+                        
+                        if(!once_time[schedule.id]){
+                            hasil   += list(schedule.item, schedule.amount);
+                            add(schedule.item, schedule.amount);
+                            once_time[schedule.id] = true;
+                        }
+                        
+                    }
+
+                }
+
+                if(schedule.type == "once-remaining"){
+
+                    let checked = document.getElementById(schedule.id).checked;
+                    let checked_value = parseInt(document.getElementById("input_" + schedule.id).value) || 0;
+
+                    if(checked){
+                        
+                        if(!once_time[schedule.id]){
+                            hasil   += list(schedule.item, schedule.amount * checked_value);
+                            add(schedule.item, schedule.amount * checked_value);
+                            once_time[schedule.id] = true;
+                        }
+                        
                     }
 
                 }

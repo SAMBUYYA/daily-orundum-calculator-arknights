@@ -131,11 +131,27 @@
 }
 /* INPUT */
 
+#bisa_didapatkan{
+
+    max-height: 50vh;
+    overflow-x: auto;
+
+    border: 5px solid black;
+    border-radius: 10px;
+    
+    margin: 2px;
+
+}
+
 #hasil_pendapatan{
 
     max-height: 50vh;
     overflow-x: auto;
 
+    border: 5px solid black;
+    border-radius: 10px;
+
+    margin: 2px;
     margin-bottom: 5px;
 
 }

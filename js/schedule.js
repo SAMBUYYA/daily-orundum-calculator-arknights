@@ -2,6 +2,8 @@ let schedule = [];
 
 /* RULES */
 
+/* type     : "once",               (For getting item only 1 time) */
+/* type     : "once-remaining",     (For getting item only 1 time, but have many time) */
 /* type     : "daily",              (For getting item can always everyday) */
 /* type     : "daily-on-date-month",(For getting item in 1 day every month) */
 /* type     : "daily-input",        (For getting item can always everyday with input) */
@@ -26,6 +28,8 @@ schedule.push({
 
     id      : "daily_missions_100_orundum",
     name    : "Daily Missions<br>(+100 Orundum)",
+
+    category: "permanent"
     
 });
 
@@ -38,9 +42,10 @@ schedule.push({
 
     id      : "daily_trading_post",
     name    : "Daily Trading Post<br>(+? Orundum)",
+
+    category: "permanent"
     
 });
-
 
 schedule.push({
 
@@ -52,6 +57,8 @@ schedule.push({
 
     id      : "daily_supply_1_headhunting_permit",
     name    : "Daily Supply Login<br>(+1 Headhunting Permit)",
+
+    category: "permanent"
     
 });
 
@@ -64,6 +71,8 @@ schedule.push({
 
     id      : "monthly_card",
     name    : "Monthly Card (? Daily Remainings)<br>(+200 Orundum)",
+
+    category: "permanent"
     
 });
 
@@ -76,6 +85,8 @@ schedule.push({
 
     id      : "weekly_missions_500_orundum",
     name    : "Weekly Mission<br>(+500 Orundum)",
+
+    category: "permanent"
     
 });
 
@@ -88,6 +99,8 @@ schedule.push({
 
     id      : "weekly_annihilation_operation_1800_orundum",
     name    : "Weekly Reward Annihilation Operation<br>(+1800 Orundum)",
+
+    category: "permanent"
     
 });
 
@@ -100,6 +113,8 @@ schedule.push({
 
     id      : "monthly_commendations_store_phase_1_2_headhunting_permit",
     name    : "Monthly Commendations Store Phase 1<br>(+2 Headhunting Permit)",
+
+    category: "permanent"
     
 });
 
@@ -112,6 +127,8 @@ schedule.push({
 
     id      : "monthly_commendations_store_phase_1_600_orundum",
     name    : "Monthly Commendations Store Phase 1<br>(+600 Orundum)",
+
+    category: "permanent"
     
 });
 
@@ -124,5 +141,21 @@ schedule.push({
 
     id      : "monthly_commendations_store_phase_2_2_headhunting_permit",
     name    : "Monthly Commendations Store Phase 2<br>(+2 Headhunting Permit)",
+
+    category: "permanent"
+    
+});
+
+schedule.push({
+
+    type    : "once-remaining", active: false,
+
+    item    : "orundum",
+    amount  : 200,
+
+    id      : "paradox_simulation_200_orundumg",
+    name    : "Paradox Simulation (? Operator Remainings)<br>(+200 Orundum)",
+
+    category: "permanent"
     
 });
