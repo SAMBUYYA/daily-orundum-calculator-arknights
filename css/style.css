@@ -1,171 +1,406 @@
-/* LIST  */
+/* =============================================
+   STYLE.CSS — ARKNIGHTS DARK TACTICAL THEME
+   ============================================= */
 
-.container{
+/* =============================================
+   LIST / CONTAINER COMPONENTS
+   ============================================= */
 
+.container {
     display: flex;
     align-items: center;
-
-    background-color: grey;
-    margin: 5px;
-    border-radius: 3px;
-
+    background: linear-gradient(135deg, #161b22 0%, #111418 100%);
+    margin: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #2a3441;
+    border-left: 3px solid #2a3441;
     overflow-x: auto;
+    transition: all 0.2s ease;
+    position: relative;
 }
 
-.list{
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(232,200,122,0.1), transparent);
+}
+
+.container:hover {
+    border-left-color: #e8c87a;
+    background: linear-gradient(135deg, #1c2330 0%, #161b22 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4), -2px 0 0 #e8c87a40;
+}
+
+.list {
     display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+/* Day label column */
+.day_list {
+    min-width: 180px;
+    padding: 12px 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    color: #8b97a8;
+    letter-spacing: 0.05em;
+    border-right: 1px solid #2a3441;
     flex-shrink: 0;
 }
 
-.day_list{
-
-   min-width: 200px;
-
-}
-
-.get_list{
-    margin: 10px;
+/* Item icon circle */
+.get_list {
+    margin: 10px 8px;
     position: relative;
     border-radius: 50%;
-    border: 3px solid black;
-    outline: 2px solid yellow;
-    width: 50px;
-    height: 50px;
+    border: 2px solid #2a3441;
+    outline: 2px solid transparent;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+    background: #0d1117;
 }
 
-.get_list_picture{
+.get_list:hover {
+    border-color: #e8c87a;
+    outline-color: rgba(232, 200, 122, 0.3);
+    box-shadow: 0 0 16px rgba(232, 200, 122, 0.2);
+    transform: scale(1.08);
+}
+
+.get_list_picture {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+    transition: filter 0.25s ease;
 }
 
-.get_list_total{
+.get_list:hover .get_list_picture {
+    filter: drop-shadow(0 2px 10px rgba(232, 200, 122, 0.4));
+}
+
+.get_list_total {
     z-index: 1;
     position: absolute;
-    bottom: 0%;
+    bottom: -2px;
     left: 60%;
-    background-color: rgba(0, 0, 0, 0.66);
-    color: white;
-    border-radius: 10px;
-    padding: 2px 5px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #e8c87a;
+    border-radius: 8px;
+    padding: 1px 5px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: bold;
+    white-space: nowrap;
+    border: 1px solid rgba(232, 200, 122, 0.3);
 }
 
-.total_pull{
+.total_pull {
     position: absolute;
-    top: -20px;
+    top: -22px;
     right: 0;
-
-    background-color: black;
-    color: white;
-
-    padding: 5px;
-
-    border-radius: 10px;
+    background: rgba(232, 200, 122, 0.12);
+    color: #e8c87a;
+    border: 1px solid rgba(232, 200, 122, 0.3);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
 }
-/* LIST  */
 
+/* =============================================
+   INPUT / CHECKBOX COMPONENTS
+   ============================================= */
 
-/* INPUT */
-.checkbox{
-
+.checkbox {
     position: relative;
-
-    margin: 5px;
-
+    margin: 4px 8px;
 }
 
-.checkbox > input[type="checkbox"]{
-
+.checkbox > input[type="checkbox"] {
     position: absolute;
-
     margin: 0;
     padding: 0;
-
-    height: 20px;
-    width: 20px;
-
+    height: 18px;
+    width: 18px;
     top: 50%;
-    left: 2px;
-
+    left: 4px;
     transform: translateY(-50%);
-
+    cursor: pointer;
+    accent-color: #e8c87a;
+    z-index: 1;
 }
 
-.checkbox > label{
-
+.checkbox > label {
     position: relative;
-
     display: block;
-
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 25px;
-
-    border: 2px solid transparent;
-
-    border-radius: 2px;
-
+    padding: 10px 14px 10px 28px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #8b97a8;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
 }
 
-.checkbox > label > .input1{
+.checkbox > label:hover {
+    background: rgba(232, 200, 122, 0.04);
+    color: #c8d0dc;
+}
 
+.checkbox > label > .input1 {
     display: block;
-
-    margin-top: 5px;
-    padding: 10px;
-
-    height: 20px;
-
-    width: 100px;
+    margin-top: 6px;
+    padding: 8px 10px;
+    height: auto;
+    width: 110px;
     max-width: 100%;
+    background: #0d1117;
+    border: 1px solid #2a3441;
+    border-radius: 4px;
+    color: #e8eaf0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
 
+.checkbox > label > .input1:focus {
+    border-color: #e8c87a80;
+    color: #e8c87a;
 }
 
 .checkbox > input[type="checkbox"]:checked + label {
-
-    border: 2px solid grey;
-
+    border-color: rgba(232, 200, 122, 0.3);
+    background: rgba(232, 200, 122, 0.05);
+    color: #c8d0dc;
 }
-/* INPUT */
 
-#bisa_didapatkan{
+.checkbox > input[type="checkbox"]:checked + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e8c87a;
+    border-radius: 2px 0 0 2px;
+}
 
+/* =============================================
+   RESULT PANELS
+   ============================================= */
+
+#bisa_didapatkan,
+#hasil_pendapatan {
     max-height: 50vh;
     overflow-x: auto;
-
-    border: 5px solid black;
-    border-radius: 10px;
-    
-    margin: 2px;
-
+    border: 1px solid #2a3441;
+    border-top: 2px solid rgba(232, 200, 122, 0.4);
+    border-radius: 8px;
+    margin: 4px 10px;
+    background: #0d1117;
+    position: relative;
 }
 
-#hasil_pendapatan{
-
-    max-height: 50vh;
-    overflow-x: auto;
-
-    border: 5px solid black;
-    border-radius: 10px;
-
-    margin: 2px;
-    margin-bottom: 5px;
-
+#bisa_didapatkan::-webkit-scrollbar,
+#hasil_pendapatan::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
 }
 
-#jumlah_pendapatan{
+#bisa_didapatkan::-webkit-scrollbar-track,
+#hasil_pendapatan::-webkit-scrollbar-track {
+    background: #111418;
+}
 
+#bisa_didapatkan::-webkit-scrollbar-thumb,
+#hasil_pendapatan::-webkit-scrollbar-thumb {
+    background: #2a3441;
+    border-radius: 3px;
+}
+
+#hasil_pendapatan {
+    margin-bottom: 8px;
+}
+
+/* Empty state */
+#bisa_didapatkan:empty::after,
+#hasil_pendapatan:empty::after {
+    content: '— No data available —';
+    display: block;
+    text-align: center;
+    padding: 32px;
+    color: #4a5568;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+
+/* =============================================
+   STICKY BOTTOM SUMMARY BAR
+   ============================================= */
+
+#jumlah_pendapatan {
     position: sticky;
     bottom: 0;
-
-    z-index: 1;
-
-    background-color: gray;
-
+    z-index: 10;
+    background: #0d1117;
+    border-top: 1px solid #2a3441;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 16px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.7);
+}
 
+/* Summary item cards inside the bar */
+#jumlah_pendapatan > * {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #161b22;
+    border: 1px solid #2a3441;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    color: #e8eaf0;
+    transition: all 0.2s ease;
+}
+
+#jumlah_pendapatan > *:hover {
+    border-color: rgba(232, 200, 122, 0.4);
+    background: #1c2330;
+    color: #e8c87a;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+footer {
+    background: #0d1117;
+    border-top: 1px solid #2a3441;
+    padding: 24px 20px 20px;
+    margin-top: 16px;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #2a3441, transparent);
+}
+
+footer p {
+    color: #4a5568;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    margin: 4px 0;
+    text-align: center;
+}
+
+footer p:first-child {
+    color: #8b97a8;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: #4fc3f7;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(79, 195, 247, 0.3);
+    transition: all 0.2s ease;
+}
+
+footer a:hover {
+    color: #81d4fa;
+    border-bottom-color: #81d4fa;
+}
+
+/* =============================================
+   UTILITY & ANIMATION
+   ============================================= */
+
+/* Pulse glow for active items */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 8px rgba(232, 200, 122, 0.2); }
+    50%       { box-shadow: 0 0 20px rgba(232, 200, 122, 0.5); }
+}
+
+/* Fade-in for dynamic content */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 600px) {
+    .day_list {
+        min-width: 120px;
+        font-size: 0.75rem;
+        padding: 8px 10px;
+    }
+
+    .get_list {
+        width: 44px;
+        height: 44px;
+        margin: 8px 5px;
+    }
+
+    .get_list_picture {
+        width: 56px;
+        height: 56px;
+    }
+
+    #jumlah_pendapatan {
+        padding: 8px 10px;
+        gap: 6px;
+    }
+
+    .container {
+        margin: 4px 6px;
+    }
+
+    h3 {
+        font-size: 0.95rem;
+        margin: 16px 8px 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .day_list {
+        min-width: 90px;
+        font-size: 0.7rem;
+    }
 }

@@ -1,17 +1,119 @@
-.header{
+/* =============================================
+   HEADER - ARKNIGHTS TACTICAL DARK THEME
+   ============================================= */
 
-    background-color: gray;
-
+.header {
+    position: relative;
+    background-color: #0d1117;
+    border-bottom: 1px solid #2a3441;
     padding: 0;
     margin: 0;
-
+    overflow: hidden;
 }
 
-.header > h1{
+/* Decorative corner elements */
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(232, 200, 122, 0.06) 0%, transparent 50%),
+        linear-gradient(225deg, rgba(79, 195, 247, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
 
+/* Bottom gold accent line */
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #b8973a 15%,
+        #e8c87a 35%,
+        #f5dfa0 50%,
+        #e8c87a 65%,
+        #b8973a 85%,
+        transparent 100%
+    );
+}
+
+.header > h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     text-align: center;
-
-    padding: 10px;
+    color: #e8eaf0;
     margin: 0;
+    padding: 20px 24px 22px;
+    position: relative;
 
+    /* Subtle text shadow for depth */
+    text-shadow:
+        0 0 30px rgba(232, 200, 122, 0.25),
+        0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Gold accent text for "Arknights" via word styling trick */
+.header > h1 span {
+    color: #e8c87a;
+}
+
+/* Decorative scan line effect */
+.header-scanline {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(232, 200, 122, 0.04) 50%,
+        transparent 100%
+    );
+    animation: scanline 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0%   { left: -100%; }
+    50%  { left: 150%; }
+    100% { left: 150%; }
+}
+
+/* Corner bracket decorations */
+.header-corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: #e8c87a;
+    border-style: solid;
+    opacity: 0.5;
+}
+
+.header-corner--tl {
+    top: 8px; left: 12px;
+    border-width: 2px 0 0 2px;
+}
+
+.header-corner--tr {
+    top: 8px; right: 12px;
+    border-width: 2px 2px 0 0;
+}
+
+.header-corner--bl {
+    bottom: 10px; left: 12px;
+    border-width: 0 0 2px 2px;
+}
+
+.header-corner--br {
+    bottom: 10px; right: 12px;
+    border-width: 0 2px 2px 0;
 }
